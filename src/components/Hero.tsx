@@ -34,13 +34,21 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
               <a
                 href="#applications"
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <span>View My Work</span>
                 <ArrowDown size={20} />
+              </a>
+              
+              <a
+                href="#designs"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Palette size={20} />
+                <span>Graphic Design</span>
               </a>
             </div>
           </div>
