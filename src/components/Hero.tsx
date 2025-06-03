@@ -1,4 +1,3 @@
-
 import { ArrowDown, Code, Palette, Smartphone } from "lucide-react";
 
 export const Hero = () => {
@@ -24,13 +23,16 @@ export const Hero = () => {
                 <Code className="text-purple-400" size={20} />
                 <span className="text-white">Full-Stack Development</span>
               </div>
+              <a
+                href="#designs"
+                className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Palette className="text-white" size={20} />
+                <span>Graphic Design</span>
+              </a>
               <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <Smartphone className="text-blue-400" size={20} />
                 <span className="text-white">Mobile Applications</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <Palette className="text-pink-400" size={20} />
-                <span className="text-white">UI/UX Design</span>
               </div>
             </div>
 
@@ -41,14 +43,6 @@ export const Hero = () => {
               >
                 <span>View My Work</span>
                 <ArrowDown size={20} />
-              </a>
-              
-              <a
-                href="#designs"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <Palette size={20} />
-                <span>Graphic Design</span>
               </a>
             </div>
           </div>
