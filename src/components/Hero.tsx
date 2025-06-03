@@ -1,3 +1,4 @@
+
 import { ArrowDown, Code, Palette, Smartphone } from "lucide-react";
 
 export const Hero = () => {
@@ -30,6 +31,10 @@ export const Hero = () => {
                 <Palette className="text-white" size={20} />
                 <span>Graphic Design</span>
               </a>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <Palette className="text-pink-400" size={20} />
+                <span className="text-white">UI/UX Design</span>
+              </div>
               <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <Smartphone className="text-blue-400" size={20} />
                 <span className="text-white">Mobile Applications</span>
