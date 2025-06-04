@@ -1,5 +1,5 @@
 
-import { ExternalLink, Github, Smartphone, Globe, Palette, Users, Monitor, Layers } from "lucide-react";
+import { ExternalLink, Github, Smartphone, Globe, Palette, Users, Monitor, Layers, Image } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const ProjectShowcase = () => {
@@ -208,6 +208,47 @@ export const ProjectShowcase = () => {
         },
         icon: <Users className="text-green-400" size={24} />
       }
+    ],
+    logos: [
+      {
+        id: "logo001",
+        title: "TechFlow Corporate Logo",
+        description: "Modern minimalist logo design for technology company with versatile brand applications.",
+        image: "/placeholder.svg",
+        tags: ["Adobe Illustrator", "Brand Identity", "Vector Design"],
+        stats: {
+          satisfaction: "100%",
+          variants: "8",
+          usage: "Multi-platform"
+        },
+        icon: <Image className="text-blue-400" size={24} />
+      },
+      {
+        id: "logo002",
+        title: "GreenEarth Environmental Logo",
+        description: "Eco-friendly logo design reflecting sustainability and environmental consciousness.",
+        image: "/placeholder.svg",
+        tags: ["Adobe Illustrator", "Sustainable Design", "Brand Strategy"],
+        stats: {
+          recognition: "Award",
+          impact: "Positive",
+          adoption: "100%"
+        },
+        icon: <Image className="text-green-400" size={24} />
+      },
+      {
+        id: "logo003",
+        title: "FoodieHub Restaurant Chain",
+        description: "Appetizing logo design for restaurant chain with scalable brand system.",
+        image: "/placeholder.svg",
+        tags: ["Adobe Illustrator", "Food & Beverage", "Scalable Design"],
+        stats: {
+          locations: "15+",
+          brand: "Consistent",
+          appeal: "High"
+        },
+        icon: <Image className="text-orange-400" size={24} />
+      }
     ]
   };
 
@@ -241,6 +282,12 @@ export const ProjectShowcase = () => {
       label: "Client Portfolios", 
       icon: <Users size={18} className="text-orange-400" />,
       anchor: "portfolios"
+    },
+    { 
+      value: "logos", 
+      label: "Logos", 
+      icon: <Image size={18} className="text-cyan-400" />,
+      anchor: "logos"
     }
   ];
 
@@ -315,7 +362,7 @@ export const ProjectShowcase = () => {
         </div>
 
         <Tabs defaultValue="applications" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 bg-white/5 backdrop-blur-sm border border-white/10 mb-8 h-auto p-2">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 bg-white/5 backdrop-blur-sm border border-white/10 mb-8 h-auto p-2">
             {tabConfig.map((tab) => (
               <TabsTrigger
                 key={tab.value}
