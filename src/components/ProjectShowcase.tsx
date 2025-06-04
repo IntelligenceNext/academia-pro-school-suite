@@ -1,3 +1,4 @@
+
 import { ExternalLink, Github, Smartphone, Globe, Palette, Users, Monitor, Layers, Image } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -439,6 +440,25 @@ export const ProjectShowcase = () => {
     </div>
   );
 
+  const renderGalleryItem = (project: any, index: number) => (
+    <div
+      key={project.id}
+      className={`group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gradient-to-br from-purple-500/20 to-blue-500/20 animate-fade-in hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
+      style={{ animationDelay: `${index * 0.05}s` }}
+    >
+      <img 
+        src={project.image} 
+        alt={project.title}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-white font-semibold text-sm mb-1">{project.title}</h3>
+        <p className="text-white/80 text-xs leading-relaxed">{project.description}</p>
+      </div>
+    </div>
+  );
+
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
@@ -467,9 +487,9 @@ export const ProjectShowcase = () => {
 
           {tabConfig.map((tab) => (
             <TabsContent key={tab.value} value={tab.value} className="mt-8">
-              <div id={tab.anchor} className={`grid gap-8 ${tab.value === 'graphics' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
+              <div id={tab.anchor} className={`grid gap-6 ${tab.value === 'graphics' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
                 {projectCategories[tab.value as keyof typeof projectCategories].map((project, index) => 
-                  renderProjectCard(project, index)
+                  tab.value === 'graphics' ? renderGalleryItem(project, index) : renderProjectCard(project, index)
                 )}
               </div>
               
