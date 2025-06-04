@@ -1,4 +1,3 @@
-
 import { ExternalLink, Github, Smartphone, Globe, Palette, Users, Monitor, Layers, Image } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -89,42 +88,133 @@ export const ProjectShowcase = () => {
     graphics: [
       {
         id: "design001",
-        title: "TechStart Brand Identity",
-        description: "Complete brand identity design including logo, business cards, and marketing materials for tech startup.",
-        image: "/placeholder.svg",
-        tags: ["Adobe Illustrator", "Photoshop", "Figma"],
+        title: "Corporate Building Signage",
+        description: "Professional corporate signage design for Cybernetique technology company building facade.",
+        image: "/lovable-uploads/3baa163a-34c4-409a-afe5-49687df3d065.png",
+        tags: ["Corporate Identity", "Signage Design", "Brand Application"],
         stats: {
-          satisfaction: "100%",
-          revisions: "2",
-          timeline: "2 weeks"
+          visibility: "High Impact",
+          branding: "Professional",
+          implementation: "Success"
         },
-        icon: <Palette className="text-purple-400" size={24} />
+        icon: <Palette className="text-blue-400" size={24} />
       },
       {
         id: "design002",
-        title: "Event Poster Series",
-        description: "Creative poster designs for annual tech conference including print and digital variations.",
-        image: "/placeholder.svg",
-        tags: ["Adobe Illustrator", "InDesign", "After Effects"],
+        title: "Political Campaign Poster",
+        description: "Eye-catching political campaign poster design with Telugu typography and professional presentation.",
+        image: "/lovable-uploads/2d9e6051-54fb-4ab8-a52e-ea67a9f47633.png",
+        tags: ["Political Design", "Typography", "Campaign Materials"],
         stats: {
-          engagement: "300%",
-          shares: "2K+",
-          reach: "50K+"
+          engagement: "High",
+          reach: "Wide",
+          impact: "Strong"
+        },
+        icon: <Palette className="text-red-400" size={24} />
+      },
+      {
+        id: "design003",
+        title: "Birthday Celebration Cards",
+        description: "Creative birthday celebration card designs with vibrant colors and personalized layouts.",
+        image: "/lovable-uploads/655f540d-f077-44cd-938f-7559c52c585f.png",
+        tags: ["Event Design", "Typography", "Personal Branding"],
+        stats: {
+          satisfaction: "100%",
+          personalization: "Custom",
+          style: "Modern"
+        },
+        icon: <Palette className="text-orange-400" size={24} />
+      },
+      {
+        id: "design004",
+        title: "Traditional Wedding Invitation",
+        description: "Elegant wedding invitation design featuring traditional Indian motifs and cultural elements.",
+        image: "/lovable-uploads/f52dd303-875e-474e-8c80-bbf4f36c99eb.png",
+        tags: ["Wedding Design", "Traditional Art", "Cultural Design"],
+        stats: {
+          elegance: "Premium",
+          tradition: "Authentic",
+          reception: "Excellent"
         },
         icon: <Palette className="text-pink-400" size={24} />
       },
       {
-        id: "design003",
-        title: "Product Packaging Design",
-        description: "Modern packaging design for eco-friendly product line with sustainable materials consideration.",
-        image: "/placeholder.svg",
-        tags: ["Adobe Illustrator", "Photoshop", "3D Mockup"],
+        id: "design005",
+        title: "Traditional Wedding Card",
+        description: "Ornate traditional wedding invitation with Sanskrit text and classical design elements.",
+        image: "/lovable-uploads/02b79e31-762a-4ba7-af92-0b275a7f2291.png",
+        tags: ["Traditional Design", "Sanskrit Typography", "Wedding Cards"],
         stats: {
-          sales: "40%",
-          recognition: "Award",
-          feedback: "4.9/5"
+          authenticity: "Traditional",
+          craftsmanship: "Detailed",
+          appeal: "Cultural"
+        },
+        icon: <Palette className="text-yellow-400" size={24} />
+      },
+      {
+        id: "design006",
+        title: "Children's Birthday Invitation",
+        description: "Playful and colorful first birthday invitation design with jungle theme and cute animals.",
+        image: "/lovable-uploads/28bc1ad2-200e-45fc-80df-68f7a8f802d7.png",
+        tags: ["Children's Design", "Birthday Cards", "Illustration"],
+        stats: {
+          creativity: "High",
+          appeal: "Child-Friendly",
+          theme: "Jungle"
         },
         icon: <Palette className="text-green-400" size={24} />
+      },
+      {
+        id: "design007",
+        title: "Bilingual Birthday Card",
+        description: "Vibrant purple-themed birthday invitation with Telugu text and modern design elements.",
+        image: "/lovable-uploads/3b0dd0df-5e8e-4844-9004-561bae59461d.png",
+        tags: ["Bilingual Design", "Modern Typography", "Event Cards"],
+        stats: {
+          vibrancy: "High",
+          readability: "Clear",
+          design: "Modern"
+        },
+        icon: <Palette className="text-purple-400" size={24} />
+      },
+      {
+        id: "design008",
+        title: "Creative Calendar Design",
+        description: "Artistic calendar design featuring colorful elephant illustration with decorative elements.",
+        image: "/lovable-uploads/fbbd64e0-4d24-47d6-970a-5686d45e8a55.png",
+        tags: ["Calendar Design", "Illustration", "Corporate Branding"],
+        stats: {
+          creativity: "Artistic",
+          functionality: "Practical",
+          branding: "Corporate"
+        },
+        icon: <Palette className="text-cyan-400" size={24} />
+      },
+      {
+        id: "design009",
+        title: "Summer Camp Poster",
+        description: "Educational summer camp promotional poster for English learning activities with vibrant design.",
+        image: "/lovable-uploads/2f2afc85-2a8e-4c44-87c5-645fddf640de.png",
+        tags: ["Educational Design", "Poster Design", "Promotional Material"],
+        stats: {
+          engagement: "High",
+          clarity: "Clear",
+          appeal: "Educational"
+        },
+        icon: <Palette className="text-yellow-400" size={24} />
+      },
+      {
+        id: "design010",
+        title: "Republic Day Tribute",
+        description: "Patriotic Republic Day design featuring Indian flag colors and professional portrait layout.",
+        image: "/lovable-uploads/85b220c5-da1d-443d-bd58-6993a45816a5.png",
+        tags: ["Patriotic Design", "Portrait Layout", "National Events"],
+        stats: {
+          patriotism: "Strong",
+          professionalism: "High",
+          impact: "Meaningful"
+        },
+        icon: <Palette className="text-orange-400" size={24} />
       }
     ],
     uiux: [
@@ -311,11 +401,11 @@ export const ProjectShowcase = () => {
         </div>
       </div>
 
-      <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg mb-4 flex items-center justify-center">
+      <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
         <img 
           src={project.image} 
           alt={project.title}
-          className="w-full h-full object-cover rounded-lg opacity-70"
+          className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
         />
       </div>
 
@@ -377,7 +467,7 @@ export const ProjectShowcase = () => {
 
           {tabConfig.map((tab) => (
             <TabsContent key={tab.value} value={tab.value} className="mt-8">
-              <div id={tab.anchor} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div id={tab.anchor} className={`grid gap-8 ${tab.value === 'graphics' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
                 {projectCategories[tab.value as keyof typeof projectCategories].map((project, index) => 
                   renderProjectCard(project, index)
                 )}
