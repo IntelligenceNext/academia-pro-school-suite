@@ -1,8 +1,26 @@
-
 import { ExternalLink, Github, Smartphone, Globe, Palette, Users, Monitor, Layers, Image } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from "react";
+import { ImageModal } from "./ImageModal";
 
 export const ProjectShowcase = () => {
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+    title: string;
+  } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageClick = (image: { src: string; alt: string; title: string }) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   const projectCategories = {
     applications: [
       {
@@ -216,6 +234,136 @@ export const ProjectShowcase = () => {
           impact: "Meaningful"
         },
         icon: <Palette className="text-orange-400" size={24} />
+      },
+      {
+        id: "design011",
+        title: "Freelancer Platform UI",
+        description: "Modern freelancer platform interface design with vibrant purple theme and user-friendly layout.",
+        image: "/lovable-uploads/d686d242-9634-4fa3-abe5-14edcf766102.png",
+        tags: ["UI Design", "Platform Design", "Freelancer"],
+        stats: {
+          usability: "High",
+          design: "Modern",
+          appeal: "Professional"
+        },
+        icon: <Palette className="text-purple-400" size={24} />
+      },
+      {
+        id: "design012",
+        title: "Studio Play Interface",
+        description: "Creative studio interface design with 3D elements and modern gradient backgrounds.",
+        image: "/lovable-uploads/6157c98b-0170-407a-bbee-46cc3d9825c6.png",
+        tags: ["Studio Design", "3D Interface", "Creative"],
+        stats: {
+          creativity: "High",
+          innovation: "Modern",
+          visual: "Stunning"
+        },
+        icon: <Palette className="text-blue-400" size={24} />
+      },
+      {
+        id: "design013",
+        title: "Studio Play Variant",
+        description: "Alternative version of studio interface with enhanced visual elements and improved user experience.",
+        image: "/lovable-uploads/c71738f8-75b2-4ac6-ae27-97221859aa2d.png",
+        tags: ["UI Variants", "Studio Design", "UX Enhancement"],
+        stats: {
+          improvement: "Enhanced",
+          experience: "Better",
+          design: "Refined"
+        },
+        icon: <Palette className="text-blue-400" size={24} />
+      },
+      {
+        id: "design014",
+        title: "NICOLAI AI Platform",
+        description: "Futuristic AI platform design with ethereal visuals and cutting-edge interface elements.",
+        image: "/lovable-uploads/3de5e389-a57d-4b8b-979f-3d49605fb768.png",
+        tags: ["AI Design", "Futuristic", "Platform"],
+        stats: {
+          innovation: "Cutting-edge",
+          visual: "Futuristic",
+          technology: "Advanced"
+        },
+        icon: <Palette className="text-cyan-400" size={24} />
+      },
+      {
+        id: "design015",
+        title: "Design Your Future",
+        description: "Inspirational design poster showcasing mobile app development with 3D character illustration.",
+        image: "/lovable-uploads/434361ec-bc6e-4ddd-b902-fa2ee15dbde1.png",
+        tags: ["Inspirational", "App Development", "3D Character"],
+        stats: {
+          inspiration: "High",
+          creativity: "Excellent",
+          message: "Motivational"
+        },
+        icon: <Palette className="text-green-400" size={24} />
+      },
+      {
+        id: "design016",
+        title: "Believe Designs Brand",
+        description: "Professional design agency branding with space theme and creative tool illustrations.",
+        image: "/lovable-uploads/054a52f2-b51a-46e4-81f0-0616a479c358.png",
+        tags: ["Agency Branding", "Space Theme", "Creative Tools"],
+        stats: {
+          branding: "Professional",
+          creativity: "Space-age",
+          impact: "Strong"
+        },
+        icon: <Palette className="text-purple-400" size={24} />
+      },
+      {
+        id: "design017",
+        title: "Maldives Travel Package",
+        description: "Tropical Maldives travel package design with beautiful ocean views and vacation elements.",
+        image: "/lovable-uploads/f4ac204d-bbb4-4f81-a072-22ddfab9f542.png",
+        tags: ["Travel Design", "Tourism", "Package Design"],
+        stats: {
+          appeal: "Tropical",
+          booking: "Attractive",
+          design: "Vacation"
+        },
+        icon: <Palette className="text-blue-400" size={24} />
+      },
+      {
+        id: "design018",
+        title: "Maldives Love Package",
+        description: "Romantic Maldives vacation package design featuring overwater bungalows and couple activities.",
+        image: "/lovable-uploads/4609dc04-e9d4-4db1-afcf-0af559e3e4a8.png",
+        tags: ["Romantic Travel", "Couple Package", "Luxury"],
+        stats: {
+          romance: "High",
+          luxury: "Premium",
+          appeal: "Couple"
+        },
+        icon: <Palette className="text-pink-400" size={24} />
+      },
+      {
+        id: "design019",
+        title: "Desert Safari Adventure",
+        description: "Exciting desert safari promotional design with camel riding and adventure elements.",
+        image: "/lovable-uploads/474052f2-1112-4073-86d0-37a2d7828912.png",
+        tags: ["Adventure Travel", "Desert Safari", "Tourism"],
+        stats: {
+          adventure: "Thrilling",
+          experience: "Unique",
+          appeal: "Adventure"
+        },
+        icon: <Palette className="text-orange-400" size={24} />
+      },
+      {
+        id: "design020",
+        title: "Sri Lanka Journey",
+        description: "Comprehensive Sri Lanka travel package design showcasing various destinations and experiences.",
+        image: "/lovable-uploads/119d8b5d-36d6-4c3b-bc2a-3682fec39667.png",
+        tags: ["Destination Travel", "Sri Lanka", "Travel Package"],
+        stats: {
+          destinations: "Multiple",
+          experience: "Comprehensive",
+          appeal: "Cultural"
+        },
+        icon: <Palette className="text-green-400" size={24} />
       }
     ],
     uiux: [
@@ -443,8 +591,13 @@ export const ProjectShowcase = () => {
   const renderGalleryItem = (project: any, index: number) => (
     <div
       key={project.id}
-      className={`group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gradient-to-br from-purple-500/20 to-blue-500/20 animate-fade-in hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
+      className={`group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gradient-to-br from-purple-500/20 to-blue-500/20 animate-fade-in hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer`}
       style={{ animationDelay: `${index * 0.05}s` }}
+      onClick={() => handleImageClick({
+        src: project.image,
+        alt: project.title,
+        title: project.title
+      })}
     >
       <img 
         src={project.image} 
@@ -460,52 +613,60 @@ export const ProjectShowcase = () => {
   );
 
   return (
-    <section className="py-20 px-6">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Featured <span className="text-purple-400">Projects</span>
-          </h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Explore a selection of my best work across different domains and technologies.
-          </p>
-        </div>
+    <>
+      <section className="py-20 px-6">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Featured <span className="text-purple-400">Projects</span>
+            </h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+              Explore a selection of my best work across different domains and technologies.
+            </p>
+          </div>
 
-        <Tabs defaultValue="applications" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 bg-white/5 backdrop-blur-sm border border-white/10 mb-8 h-auto p-2">
-            {tabConfig.map((tab) => (
-              <TabsTrigger
-                key={tab.value}
-                value={tab.value}
-                className="flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-2 py-3 px-4 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-white/70 hover:text-white transition-all duration-300"
-              >
-                {tab.icon}
-                <span className="text-xs md:text-sm font-medium">{tab.label}</span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          {tabConfig.map((tab) => (
-            <TabsContent key={tab.value} value={tab.value} className="mt-8">
-              <div id={tab.anchor} className={`grid gap-6 ${tab.value === 'graphics' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
-                {projectCategories[tab.value as keyof typeof projectCategories].map((project, index) => 
-                  tab.value === 'graphics' ? renderGalleryItem(project, index) : renderProjectCard(project, index)
-                )}
-              </div>
-              
-              <div className="text-center mt-12">
-                <a
-                  href={`#${tab.anchor}`}
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          <Tabs defaultValue="applications" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 bg-white/5 backdrop-blur-sm border border-white/10 mb-8 h-auto p-2">
+              {tabConfig.map((tab) => (
+                <TabsTrigger
+                  key={tab.value}
+                  value={tab.value}
+                  className="flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-2 py-3 px-4 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-white/70 hover:text-white transition-all duration-300"
                 >
-                  <Layers size={20} />
-                  <span>View All {tab.label}</span>
-                </a>
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
-      </div>
-    </section>
+                  {tab.icon}
+                  <span className="text-xs md:text-sm font-medium">{tab.label}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {tabConfig.map((tab) => (
+              <TabsContent key={tab.value} value={tab.value} className="mt-8">
+                <div id={tab.anchor} className={`grid gap-6 ${tab.value === 'graphics' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
+                  {projectCategories[tab.value as keyof typeof projectCategories].map((project, index) => 
+                    tab.value === 'graphics' ? renderGalleryItem(project, index) : renderProjectCard(project, index)
+                  )}
+                </div>
+                
+                <div className="text-center mt-12">
+                  <a
+                    href={`#${tab.anchor}`}
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <Layers size={20} />
+                    <span>View All {tab.label}</span>
+                  </a>
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+      </section>
+
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        image={selectedImage}
+      />
+    </>
   );
 };
