@@ -2,6 +2,7 @@ import { ExternalLink, Github, Smartphone, Globe, Palette, Users, Monitor, Layer
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
+import { LogoCarousel } from "./LogoCarousel";
 
 export const ProjectShowcase = () => {
   const [selectedImage, setSelectedImage] = useState<{
@@ -10,15 +11,26 @@ export const ProjectShowcase = () => {
     title: string;
   } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLogoIndex, setSelectedLogoIndex] = useState<number>(0);
+  const [isLogoCarouselOpen, setIsLogoCarouselOpen] = useState(false);
 
   const handleImageClick = (image: { src: string; alt: string; title: string }) => {
     setSelectedImage(image);
     setIsModalOpen(true);
   };
 
+  const handleLogoClick = (index: number) => {
+    setSelectedLogoIndex(index);
+    setIsLogoCarouselOpen(true);
+  };
+
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
+  };
+
+  const closeLogoCarousel = () => {
+    setIsLogoCarouselOpen(false);
   };
 
   const projectCategories = {
@@ -482,42 +494,103 @@ export const ProjectShowcase = () => {
     logos: [
       {
         id: "logo001",
-        title: "TechFlow Corporate Logo",
-        description: "Modern minimalist logo design for technology company with versatile brand applications.",
-        image: "/placeholder.svg",
-        tags: ["Adobe Illustrator", "Brand Identity", "Vector Design"],
-        stats: {
-          satisfaction: "100%",
-          variants: "8",
-          usage: "Multi-platform"
-        },
+        title: "NABA New Achievers",
+        description: "Professional circular logo design for educational institution featuring portrait design and circular text layout.",
+        image: "/lovable-uploads/b924b055-afa9-403e-b951-6c8632bfa33c.png",
+        client: "NABA Organization",
+        industry: "Education",
+        year: "2024",
         icon: <Image className="text-blue-400" size={24} />
       },
       {
         id: "logo002",
-        title: "GreenEarth Environmental Logo",
-        description: "Eco-friendly logo design reflecting sustainability and environmental consciousness.",
-        image: "/placeholder.svg",
-        tags: ["Adobe Illustrator", "Sustainable Design", "Brand Strategy"],
-        stats: {
-          recognition: "Award",
-          impact: "Positive",
-          adoption: "100%"
-        },
-        icon: <Image className="text-green-400" size={24} />
+        title: "Softtouch",
+        description: "Modern tech-focused logo with orange and blue gradient text design for software company.",
+        image: "/lovable-uploads/7aead4a4-8606-457f-8846-bf43de938c23.png",
+        client: "Softtouch Technologies",
+        industry: "Technology",
+        year: "2024",
+        icon: <Image className="text-orange-400" size={24} />
       },
       {
         id: "logo003",
-        title: "FoodieHub Restaurant Chain",
-        description: "Appetizing logo design for restaurant chain with scalable brand system.",
-        image: "/placeholder.svg",
-        tags: ["Adobe Illustrator", "Food & Beverage", "Scalable Design"],
-        stats: {
-          locations: "15+",
-          brand: "Consistent",
-          appeal: "High"
-        },
+        title: "TEKpages",
+        description: "Dynamic corporate logo featuring purple and blue color scheme with forward-moving design elements.",
+        image: "/lovable-uploads/721dd443-df27-4d1b-86d1-65141216678a.png",
+        client: "TEKpages Digital",
+        industry: "Digital Services",
+        year: "2024",
+        icon: <Image className="text-purple-400" size={24} />
+      },
+      {
+        id: "logo004",
+        title: "MKG - My Knowledge Group",
+        description: "Colorful educational logo with vibrant typography representing knowledge and growth.",
+        image: "/lovable-uploads/6d67475d-cebb-41c1-a1cc-c4526195ccae.png",
+        client: "My Knowledge Group",
+        industry: "Education",
+        year: "2024",
+        icon: <Image className="text-green-400" size={24} />
+      },
+      {
+        id: "logo005",
+        title: "CBit Technologies",
+        description: "Corporate technology logo with sophisticated circular pattern and professional branding.",
+        image: "/lovable-uploads/ada85bcd-6dbe-405b-a1ed-6d3c844e6553.png",
+        client: "CBit Technologies",
+        industry: "Technology",
+        year: "2024",
+        icon: <Image className="text-cyan-400" size={24} />
+      },
+      {
+        id: "logo006",
+        title: "Cybernetique",
+        description: "Sleek technology company logo with modern typography and gradient arrow element.",
+        image: "/lovable-uploads/120f1773-e2c7-4485-9cc9-2a2872aa2b4d.png",
+        client: "Cybernetique",
+        industry: "Technology",
+        year: "2024",
+        icon: <Image className="text-red-400" size={24} />
+      },
+      {
+        id: "logo007",
+        title: "Bhim Legacy Foundation",
+        description: "Non-profit foundation logo featuring tree of life symbol with vibrant orange and green colors.",
+        image: "/lovable-uploads/fad29f4e-8bc8-4e99-8836-1cf80e7633d6.png",
+        client: "Bhim Legacy Foundation",
+        industry: "Non-Profit",
+        year: "2024",
         icon: <Image className="text-orange-400" size={24} />
+      },
+      {
+        id: "logo008",
+        title: "GrowJQ",
+        description: "Growth-focused startup logo with upward arrow and modern typography in bold colors.",
+        image: "/lovable-uploads/bab87538-953f-40d9-9e6f-7bdf8656bcb7.png",
+        client: "GrowJQ",
+        industry: "Business Growth",
+        year: "2024",
+        icon: <Image className="text-pink-400" size={24} />
+      },
+      {
+        id: "logo009",
+        title: "BLF JeevanSetu",
+        description: "Community service logo featuring tree symbol with protective hands representing life and care.",
+        image: "/lovable-uploads/25a56082-b571-42ee-b2ec-8a5d9fb5c8b6.png",
+        client: "Bhim Legacy Foundation",
+        industry: "Community Service",
+        year: "2024",
+        icon: <Image className="text-green-400" size={24} />
+      },
+      {
+        id: "logo010",
+        title: "WorkistForIT",
+        description: "Professional recruitment platform logo with corporate blue and orange color scheme.",
+        image: "/lovable-uploads/dc271e91-95ba-4100-acd2-c7a212e484b1.png",
+        client: "WorkistForIT",
+        industry: "Recruitment",
+        year: "2024",
+        icon: <Image className="text-blue-400" size={24} />
       }
     ]
   };
@@ -667,6 +740,26 @@ export const ProjectShowcase = () => {
     </div>
   );
 
+  const renderLogoItem = (logo: any, index: number) => (
+    <div
+      key={logo.id}
+      className={`group relative overflow-hidden rounded-2xl aspect-square bg-white backdrop-blur-sm border border-white/10 hover:border-purple-400/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl animate-fade-in cursor-pointer p-6 flex items-center justify-center`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+      onClick={() => handleLogoClick(index)}
+    >
+      <img 
+        src={logo.image} 
+        alt={logo.title}
+        className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+      <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-white font-semibold text-sm mb-1">{logo.title}</h3>
+        <p className="text-white/80 text-xs">{logo.client}</p>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <section className="py-20 px-6">
@@ -696,10 +789,16 @@ export const ProjectShowcase = () => {
 
             {tabConfig.map((tab) => (
               <TabsContent key={tab.value} value={tab.value} className="mt-8">
-                <div id={tab.anchor} className={`grid gap-6 ${tab.value === 'graphics' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
-                  {projectCategories[tab.value as keyof typeof projectCategories].map((project, index) => 
-                    tab.value === 'graphics' ? renderGalleryItem(project, index) : renderProjectCard(project, index)
-                  )}
+                <div id={tab.anchor} className={`grid gap-6 ${tab.value === 'graphics' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : tab.value === 'logos' ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
+                  {projectCategories[tab.value as keyof typeof projectCategories].map((project, index) => {
+                    if (tab.value === 'graphics') {
+                      return renderGalleryItem(project, index);
+                    } else if (tab.value === 'logos') {
+                      return renderLogoItem(project, index);
+                    } else {
+                      return renderProjectCard(project, index);
+                    }
+                  })}
                 </div>
                 
                 <div className="text-center mt-12">
@@ -721,6 +820,13 @@ export const ProjectShowcase = () => {
         isOpen={isModalOpen}
         onClose={closeModal}
         image={selectedImage}
+      />
+
+      <LogoCarousel
+        isOpen={isLogoCarouselOpen}
+        onClose={closeLogoCarousel}
+        logos={projectCategories.logos}
+        initialIndex={selectedLogoIndex}
       />
     </>
   );
