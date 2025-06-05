@@ -24,43 +24,49 @@ export const ProjectShowcase = () => {
   const projectCategories = {
     applications: [
       {
-        id: "sms001",
-        title: "AcademiaPro: School Management System",
-        description: "Comprehensive SMS for BrightSparks International School with student management, attendance tracking, fee management, and parent portals.",
-        image: "/placeholder.svg",
-        tags: ["React", "Node.js", "MongoDB", "React Native"],
+        id: "hrms001",
+        title: "HRMS Executive Dashboard",
+        description: "Comprehensive automated HRMS solution streamlining talent acquisition, employee management, and HR workflows with real-time analytics and predictive insights.",
+        image: "/lovable-uploads/133a6388-907d-4684-806f-defde2834872.png",
+        tags: ["React", "Node.js", "MongoDB", "TypeScript", "Analytics"],
         stats: {
-          students: "500+",
-          efficiency: "30%",
-          engagement: "40%"
+          modules: "12+",
+          efficiency: "65%",
+          users: "500+"
         },
-        icon: <Smartphone className="text-blue-400" size={24} />
+        features: "Talent Acquisition • Employee Hub • Workflow Automation • Analytics Dashboard",
+        icon: <Smartphone className="text-purple-400" size={24} />,
+        ctaText: "Explore HRMS Suite"
       },
       {
-        id: "inventory001",
-        title: "InventoryFlow: Warehouse Management",
-        description: "Real-time inventory tracking system with barcode scanning, automated reordering, and comprehensive analytics dashboard.",
-        image: "/placeholder.svg",
-        tags: ["React", "Express", "PostgreSQL", "Socket.io"],
+        id: "edumanage001",
+        title: "EduManage: College ERP System",
+        description: "All-in-one automated college management system handling admissions, academics, finance, and administrative operations with comprehensive reporting.",
+        image: "/lovable-uploads/36fab075-375a-4c9f-b7ea-c3ce15b8cf31.png",
+        tags: ["React", "Express", "PostgreSQL", "Socket.io", "ERP"],
         stats: {
-          accuracy: "99.8%",
-          efficiency: "45%",
-          users: "200+"
+          students: "2847+",
+          modules: "15+",
+          efficiency: "50%"
         },
-        icon: <Smartphone className="text-green-400" size={24} />
+        features: "Student Management • Academic Records • Communications • Events Calendar",
+        icon: <Smartphone className="text-blue-400" size={24} />,
+        ctaText: "View EduManage Details"
       },
       {
-        id: "pos001",
-        title: "RetailPro: Point of Sale System",
-        description: "Modern POS system with payment processing, receipt printing, inventory management, and sales analytics.",
-        image: "/placeholder.svg",
-        tags: ["React Native", "Firebase", "Stripe", "Node.js"],
+        id: "myschool001",
+        title: "MySchool: Multi-School Management",
+        description: "Advanced school management system supporting multiple institutions with centralized control, academic management, and parent-teacher collaboration.",
+        image: "/lovable-uploads/826ca328-fdac-41d7-b5b7-3d1babb7a543.png",
+        tags: ["React", "Node.js", "MySQL", "Real-time", "Multi-tenant"],
         stats: {
-          transactions: "10K+",
-          uptime: "99.9%",
-          stores: "50+"
+          schools: "Multiple",
+          students: "Active",
+          sessions: "Dynamic"
         },
-        icon: <Smartphone className="text-purple-400" size={24} />
+        features: "Multi-School Support • Student Lifecycle • Academic Management • Parent Portal",
+        icon: <Smartphone className="text-green-400" size={24} />,
+        ctaText: "Discover MySchool"
       }
     ],
     websites: [
@@ -566,6 +572,14 @@ export const ProjectShowcase = () => {
         {project.description}
       </p>
 
+      {project.features && (
+        <div className="mb-4">
+          <p className="text-sm text-purple-300/80 leading-relaxed">
+            {project.features}
+          </p>
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tags.map((tag: string) => (
           <span
@@ -577,7 +591,7 @@ export const ProjectShowcase = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/10">
+      <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 mb-4">
         {Object.entries(project.stats).map(([key, value]) => (
           <div key={key} className="text-center">
             <div className="text-lg font-bold text-white">{value as string}</div>
@@ -585,6 +599,12 @@ export const ProjectShowcase = () => {
           </div>
         ))}
       </div>
+
+      {project.ctaText && (
+        <button className="w-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 border border-purple-400/30 hover:border-purple-400/50 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+          {project.ctaText}
+        </button>
+      )}
     </div>
   );
 
