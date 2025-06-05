@@ -72,42 +72,67 @@ export const ProjectShowcase = () => {
     websites: [
       {
         id: "web001",
-        title: "E-Commerce Platform",
-        description: "Modern e-commerce solution with payment integration, inventory management, and responsive design.",
-        image: "/placeholder.svg",
-        tags: ["React", "Stripe", "Tailwind", "PostgreSQL"],
+        title: "Workist For IT",
+        description: "Modern corporate recruitment platform connecting top talent across all industries with seamless job search and hiring solutions.",
+        image: "/lovable-uploads/211a5083-fe5c-4a16-a8ae-0e731d056b2f.png",
+        tags: ["Next.js", "Supabase", "Tailwind", "React"],
         stats: {
-          conversion: "25%",
-          performance: "98%",
-          users: "1000+"
+          traffic: "High",
+          performance: "Optimized",
+          users: "Active"
         },
-        icon: <Globe className="text-green-400" size={24} />
+        features: "Job Portal • Talent Matching • HRMS Integration • Business Solutions",
+        icon: <Globe className="text-blue-400" size={24} />,
+        ctaText: "Visit Workist",
+        liveUrl: "https://www.workistforit.com"
       },
       {
         id: "web002",
-        title: "Corporate Website & CMS",
-        description: "Professional corporate website with custom CMS, blog functionality, and SEO optimization.",
-        image: "/placeholder.svg",
-        tags: ["React", "Strapi", "Tailwind", "AWS"],
+        title: "Endeavour Sciences",
+        description: "Corporate website for IT services company featuring comprehensive service portfolio and engineering impact solutions.",
+        image: "/lovable-uploads/a3e5dba0-a3ff-4311-b0aa-a568844967a0.png",
+        tags: ["React", "Node.js", "Express", "Supabase"],
         stats: {
-          traffic: "200%",
-          seo: "95%",
-          speed: "98%"
+          services: "Multiple",
+          impact: "Engineering",
+          reach: "Global"
         },
-        icon: <Globe className="text-blue-400" size={24} />
+        features: "Service Portfolio • Corporate Info • HRMS Portal • Contact Solutions",
+        icon: <Globe className="text-orange-400" size={24} />,
+        ctaText: "Discover Endeavour",
+        liveUrl: "https://www.endeavorsciences.in"
       },
       {
         id: "web003",
-        title: "Restaurant Booking Platform",
-        description: "Online reservation system with table management, payment processing, and customer reviews.",
-        image: "/placeholder.svg",
-        tags: ["React", "Node.js", "MongoDB", "Stripe"],
+        title: "Cybernetique",
+        description: "Digital innovation company website showcasing fastest-growing global services with trusted expertise and innovative solutions.",
+        image: "/lovable-uploads/c1a9698e-ce4d-40e5-9eb6-0f3a439586a5.png",
+        tags: ["React", "Node.js", "Express", "Supabase"],
         stats: {
-          bookings: "5K+",
-          satisfaction: "4.8/5",
-          restaurants: "25+"
+          growth: "Fastest",
+          ranking: "Top 100",
+          trust: "Global"
         },
-        icon: <Globe className="text-orange-400" size={24} />
+        features: "Digital Solutions • Innovation Services • Brand Portfolio • Global Reach",
+        icon: <Globe className="text-purple-400" size={24} />,
+        ctaText: "Explore Services",
+        liveUrl: "https://www.cybernetiques.com"
+      },
+      {
+        id: "web004",
+        title: "Baptist School Sedam",
+        description: "Educational institution website empowering young minds with Baptist values, promoting curiosity, integrity, and lifelong leadership.",
+        image: "/lovable-uploads/064d2af1-7836-4f9a-a4ba-e41308279672.png",
+        tags: ["WordPress", "PHP", "MySQL", "Education"],
+        stats: {
+          programs: "Academic",
+          values: "Baptist",
+          focus: "Leadership"
+        },
+        features: "Academic Programs • Admission Portal • Student Login • School Information",
+        icon: <Globe className="text-red-400" size={24} />,
+        ctaText: "Visit School Site",
+        liveUrl: "https://baptistschoolsedam.com"
       }
     ],
     graphics: [
@@ -547,11 +572,18 @@ export const ProjectShowcase = () => {
           {project.icon}
         </div>
         <div className="flex space-x-2">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+            >
+              <ExternalLink size={16} className="text-white" />
+            </a>
+          )}
           <button className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
             <Github size={16} className="text-white" />
-          </button>
-          <button className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-            <ExternalLink size={16} className="text-white" />
           </button>
         </div>
       </div>
@@ -601,7 +633,10 @@ export const ProjectShowcase = () => {
       </div>
 
       {project.ctaText && (
-        <button className="w-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 border border-purple-400/30 hover:border-purple-400/50 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+        <button 
+          onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')}
+          className="w-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 border border-purple-400/30 hover:border-purple-400/50 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+        >
           {project.ctaText}
         </button>
       )}
