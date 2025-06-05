@@ -84,7 +84,7 @@ export const Hero = () => {
                   <Wand2 className="text-white" size={18} />
                 </div>
                 <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center animate-bounce shadow-lg" style={{ animationDelay: '2.5s' }} title="Bolt.new">
-                  <bolt className="text-white" size={20} />
+                  <Zap className="text-white" size={20} />
                 </div>
                 <div className="absolute -bottom-6 right-1/4 w-10 h-10 bg-gradient-to-r from-teal-500 to-green-500 rounded-full flex items-center justify-center animate-bounce shadow-lg" style={{ animationDelay: '3s' }} title="Cursor">
                   <Cpu className="text-white" size={18} />
