@@ -591,6 +591,106 @@ export const ProjectShowcase = () => {
         industry: "Recruitment",
         year: "2024",
         icon: <Image className="text-blue-400" size={24} />
+      },
+      {
+        id: "logo011",
+        title: "WAHRES LEBEN",
+        description: "Modern German brand logo with dynamic colorful droplet design representing authentic living.",
+        image: "/lovable-uploads/eae143a5-5767-4f79-88f0-3dd220602d7d.png",
+        client: "WAHRES LEBEN",
+        industry: "Lifestyle Brand",
+        year: "2024",
+        icon: <Image className="text-red-400" size={24} />
+      },
+      {
+        id: "logo012",
+        title: "4AM CAFE",
+        description: "Restaurant cafe logo with elegant teal design featuring utensils and banner elements for flavorful journey branding.",
+        image: "/lovable-uploads/8546adf3-6c5d-4d3f-9aa5-fac2ef3aa359.png",
+        client: "4AM CAFE",
+        industry: "Food & Beverage",
+        year: "2024",
+        icon: <Image className="text-teal-400" size={24} />
+      },
+      {
+        id: "logo013",
+        title: "Microsoft Office Suite",
+        description: "Corporate software logo design with colorful geometric blocks representing productivity suite applications.",
+        image: "/lovable-uploads/8a73fb9e-8be2-439f-b909-1761dd7d4367.png",
+        client: "Microsoft Corporation",
+        industry: "Software",
+        year: "2024",
+        icon: <Image className="text-blue-400" size={24} />
+      },
+      {
+        id: "logo014",
+        title: "ADVITI Xray and Scan Center",
+        description: "Medical healthcare logo featuring lungs design with cross symbol in gradient blue tones for diagnostic center.",
+        image: "/lovable-uploads/fb838564-49f3-4d16-b97f-5d925a7111c8.png",
+        client: "ADVITI Medical Center",
+        industry: "Healthcare",
+        year: "2024",
+        icon: <Image className="text-blue-400" size={24} />
+      },
+      {
+        id: "logo015",
+        title: "Cybernetique TalentHub",
+        description: "HR recruitment platform logo with modern typography and vibrant gradient arrow design for talent management.",
+        image: "/lovable-uploads/19fe9aa7-e3e6-42f0-b269-4287504b6205.png",
+        client: "Cybernetique TalentHub",
+        industry: "Human Resources",
+        year: "2024",
+        icon: <Image className="text-purple-400" size={24} />
+      },
+      {
+        id: "logo016",
+        title: "BLF Aspire",
+        description: "Motivational foundation logo with climbing figure and star symbol representing achievement and growth aspirations.",
+        image: "/lovable-uploads/ae4d56c7-75bc-4496-ba3c-ef58da5377f2.png",
+        client: "Bhim Legacy Foundation",
+        industry: "Non-Profit Education",
+        year: "2024",
+        icon: <Image className="text-orange-400" size={24} />
+      },
+      {
+        id: "logo017",
+        title: "BLF Connect",
+        description: "Community connection logo featuring people symbols with circular design in blue and orange colors.",
+        image: "/lovable-uploads/ab487a14-a96a-4aeb-a1fb-d380daa3c416.png",
+        client: "Bhim Legacy Foundation",
+        industry: "Community Services",
+        year: "2024",
+        icon: <Image className="text-blue-400" size={24} />
+      },
+      {
+        id: "logo018",
+        title: "Endeavour Sciences",
+        description: "Corporate technology services logo with modern orange and green gradient typography design.",
+        image: "/lovable-uploads/60c53bca-29a9-432c-8cad-a6ed7dbfd704.png",
+        client: "Endeavour Sciences",
+        industry: "Technology Services",
+        year: "2024",
+        icon: <Image className="text-orange-400" size={24} />
+      },
+      {
+        id: "logo019",
+        title: "NABA's Community",
+        description: "Community organization logo featuring portrait design with professional blue branding and modern typography.",
+        image: "/lovable-uploads/fc20dd3e-d8c9-4188-9dac-a102ca0049ef.png",
+        client: "NABA Community",
+        industry: "Community Organization",
+        year: "2024",
+        icon: <Image className="text-blue-400" size={24} />
+      },
+      {
+        id: "logo020",
+        title: "BLF - Bhim Legacy Foundation",
+        description: "Complete foundation branding with golden tree of life symbol and professional red typography design.",
+        image: "/lovable-uploads/e6e1a3af-42e3-4ec9-8d45-4263492428d3.png",
+        client: "Bhim Legacy Foundation",
+        industry: "Non-Profit Foundation",
+        year: "2024",
+        icon: <Image className="text-red-400" size={24} />
       }
     ]
   };
