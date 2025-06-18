@@ -1,5 +1,5 @@
 
-import { ArrowDown, Code, Palette, Smartphone, Bot, Sparkles, Zap, Brain, Cpu, Wand2, Github, Settings } from "lucide-react";
+import { ArrowDown, Code, Palette, Smartphone, Bot, Sparkles, Zap, Brain, Cpu, Wand2, Github, Settings, MessageCircle, Mail } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -43,11 +43,20 @@ export const Hero = () => {
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
               <a
-                href="#applications"
+                href="https://wa.me/919618395161"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <MessageCircle size={20} />
+                <span>WhatsApp +919618395161</span>
+              </a>
+              <a
+                href="mailto:simon@workistforit.com"
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <span>View My Work</span>
-                <ArrowDown size={20} />
+                <Mail size={20} />
+                <span>simon@workistforit.com</span>
               </a>
             </div>
           </div>
